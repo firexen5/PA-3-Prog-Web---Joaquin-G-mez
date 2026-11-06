@@ -66,9 +66,8 @@ El script crea la base de datos `bd_users` y la tabla `users`:
 |--------------|--------------------------|--------------------------------------|
 | `id`         | INT, AUTO_INCREMENT, PK  | Identificador del usuario            |
 | `name`       | VARCHAR(100)             | Nombre                               |
-| `email`      | VARCHAR(150), UNIQUE     | Correo electrónico                   |
-| `password`   | VARCHAR(255)             | Contraseña (almacenada con hash)     |
-| `created_at` | TIMESTAMP                | Fecha de creación (automática)       |
+| `email`      | VARCHAR(150)             | Correo electrónico                   |
+| `password`   | VARCHAR(255)             | Contraseña                           |
 
 ### 3. Configurar la conexión
 
