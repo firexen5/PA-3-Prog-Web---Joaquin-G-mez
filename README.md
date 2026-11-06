@@ -1,4 +1,4 @@
-# PA-3 CRUD DE USUARIOS 
+# PA-3 CRUD DE USUARIOS  
 
 Este proyecto sirve para la gestion de usuarios (CRUD) desarrollado en php y MySQL. Sigue una arquitectura por capas (modelo, controlador y rutas) con un único punto de entrada (`public/index.php`). 
 Incluye una interfaz web con Bootstrap para consumir la API desde el navegador.
