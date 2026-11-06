@@ -66,9 +66,9 @@ El script crea la base de datos `bd_users` y la tabla `users`:
 | Campo        | Tipo                     | Descripción                          |
 |--------------|--------------------------|--------------------------------------|
 | `id`         | INT, AUTO_INCREMENT, PK  | Identificador del usuario            |
-| `name`       | VARCHAR(100)             | Nombre                               |
-| `email`      | VARCHAR(150)             | Correo electrónico                   |
-| `password`   | VARCHAR(255)             | Contraseña                           |
+| `nombre`     | VARCHAR(30)              | Nombre                               |
+| `email`      | VARCHAR(50)              | Correo electrónico                   |
+| `contrasena` | VARCHAR(20)              | Contraseña                           |
 
 ### 3. Configurar la conexión
 
@@ -128,16 +128,16 @@ Host: localhost:8000
 Content-Type: application/json
 
 {
-  "name": "Ana Pérez",
+  "nombre": "Ana Pérez",
   "email": "ana@mail.com",
-  "password": "secreto123"
+  "contrasena": "secreto123"
 }
 ```
 
 ```bash
 curl -i -X POST http://localhost:8000/api/users \
   -H "Content-Type: application/json" \
-  -d '{"name":"Ana Pérez","email":"ana@mail.com","password":"secreto123"}'
+  -d '{"nombre":"Ana Pérez","email":"ana@mail.com","contrasena":"secreto123"}'
 ```
 
 Respuesta `201 Created`:
@@ -161,9 +161,8 @@ Respuesta `200 OK`:
 [
   {
     "id": 1,
-    "name": "Ana Pérez",
+    "nombre": "Ana Pérez",
     "email": "ana@mail.com",
-    "created_at": "2026-11-06 15:30:00"
   }
 ]
 ```
@@ -187,7 +186,7 @@ Respuesta `200 OK`: el objeto del usuario. Si no existe, `404 Not Found`:
 ```bash
 curl -i -X PUT http://localhost:8000/api/users/1 \
   -H "Content-Type: application/json" \
-  -d '{"name":"Ana P.","email":"ana@mail.com","password":"nueva12345"}'
+  -d '{"nombre":"Ana P.","email":"ana@mail.com","contrasena":"nueva12345"}'
 ```
 
 Respuesta `200 OK`:
@@ -245,7 +244,7 @@ Las respuestas de error tienen la forma `{"error": "mensaje descriptivo"}`.
 
 ## Validaciones
 
-En `POST` y `PUT` el cuerpo debe ser un JSON válido con los campos `name`, `email` y `password`:
+En `POST` y `PUT` el cuerpo debe ser un JSON válido con los campos `nombre`, `email` y `constrasena`:
 
 - Los tres campos son obligatorios y deben ser texto no vacío.
 - `email` debe tener un formato válido y no puede repetirse.
@@ -265,7 +264,6 @@ La carpeta `public` incluye una interfaz con Bootstrap (`usuarios.html` y `usuar
 ## Notas de seguridad
 
 - Las consultas usan sentencias preparadas de PDO (protección contra inyección SQL).
-- Las contraseñas se guardan con `password_hash()` y nunca se devuelven en las respuestas de la API.
 - Las credenciales de la base de datos incluidas son las predeterminadas de XAMPP, solo para desarrollo local. No las uses en producción.
 
 ## Autor
