@@ -1,6 +1,7 @@
 # PA-3 CRUD DE USUARIOS 
 
-API REST para la gestión del recurso **Usuarios** (CRUD completo), desarrollada en PHP con PDO y MySQL. Sigue una arquitectura por capas (modelo, controlador y rutas) con un único punto de entrada (`public/index.php`). Incluye una interfaz web con Bootstrap para consumir la API desde el navegador.
+Este proyecto sirve para la gestion de usuarios (CRUD) desarrollado en php y MySQL. Sigue una arquitectura por capas (modelo, controlador y rutas) con un único punto de entrada (`public/index.php`). 
+Incluye una interfaz web con Bootstrap para consumir la API desde el navegador.
 
 ## Tecnologías
 
